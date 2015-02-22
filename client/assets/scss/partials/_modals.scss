@@ -1,0 +1,84 @@
+.modal{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0.0;
+
+	&.non-fixed{
+		position: relative;
+		height: auto;
+		min-height: 100vh;
+
+		.modal-content{
+			position: absolute;
+			max-height: inherit;
+			overflow: inherit;
+			left: 50%;
+			top: 50%;
+			margin: 0 auto;
+			transform: translate3d(-50%, -50%, 0);
+
+		}
+	}
+
+	&.best-modal{
+		background-color: lighten($orange, 10%);
+
+		.modal-header{
+			background-color: $orange;
+		}
+	}
+
+	&.worst-modal{
+		background-color: lighten($red, 10%);
+		.modal-header{
+			background-color: $red;
+		}
+	}
+
+	&.funniest-modal{
+		background-color: lighten($green, 10%);
+		.modal-header{
+			background-color: $green;
+		}
+	}
+
+	&.coolest-modal{
+		background-color: lighten($darkBlue, 10%);
+		.modal-header{
+			background-color: $darkBlue;
+		}
+	}
+
+	&.weirdest-modal{
+		background-color: lighten($purple, 10%);
+		.modal-header{
+			background-color: $purple;
+		}
+	}
+}
+
+.modal-content{
+	position: absolute;
+	width: 100%;
+	max-width: 400px;
+	max-height: 90vh;
+	left: 50%;
+	top: 50%;
+	transform: translate3d(-50%, -50%, 0);
+	background-color: white;
+	overflow: auto;
+	border: 5px solid white;
+}
+
+.modal-header{
+	padding: 2rem;
+	color: white;
+	text-align: center;
+
+	p{
+		margin: 0;
+	}
+}

@@ -1,0 +1,98 @@
+.header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	transition: all 300ms ease-out;
+}
+
+.menu-toggle{
+	position: fixed;
+	right: 20px;
+	top: 20px;
+
+	.bar{
+		position: relative;
+		width: 25px;
+		background-color: lighten(black, 95%);
+		height: 4px;
+		margin-bottom: 4px;
+		border-radius: 1px;
+		transition: background 600ms ease-out;
+	}
+
+	&.active{
+		.bar{
+			background-color: white;
+		}
+	}
+}
+
+.header-link{
+	float: right;
+	color: white;
+	font-size: .9rem;
+	line-height: 2rem;
+	margin-right: 1rem;
+	text-decoration: none;
+}
+
+.application.with-account{
+	.menu-toggle{
+		.bar{
+			background-color: $red;
+		}
+	}
+}
+
+.account{
+	position: fixed;
+	width: 200px;
+	height: 100%;
+	right: -300px;
+	background-color: lighten(black, 20%);
+
+	a{
+		width: 100%;
+		display: block;
+		padding: .5rem;
+		background-color: white;
+		margin-bottom: 5px;
+		text-align: center;
+		line-height: 1.8rem;
+	}
+}
+
+.account-nav{
+	margin-top: 4rem;
+}
+
+.nav-link{
+	&.best-link{
+		color: $orange;
+	}
+	&.worst-link{
+		color: $red;
+	}
+	&.funniest-link{
+		color: $green;
+	}
+	&.coolest-link{
+		color: $darkBlue;
+	}
+	&.weirdest-link{
+		color: $purple;
+	}
+}
+
+.dashboard-link{
+	color: $orange;
+}
+
+.logout-link{
+	color: $red;
+}
+
+.award-nav{
+	margin-top: 3rem;
+}

@@ -1,0 +1,19 @@
+<template name="account">
+	<div class="account">
+		<nav class="account-nav pull-right">
+			{{#if currentUser}}
+				<a href="#" class="logout-link">Logout</a>
+			{{else}}
+				<button class="twitter-login-btn">Login With Twitter</button>
+			{{/if}}
+		</nav>
+
+		<nav class="award-nav">
+			<a class="nav-link best-link" href="/best">Best</a>
+			<a class="nav-link worst-link" href="/worst">Worst</a>
+			<a class="nav-link funniest-link" href="/funniest">Funniest</a>
+			<a class="nav-link coolest-link" href="/coolest">Coolest</a>
+			<a class="nav-link weirdest-link" href="/weirdest">Weirdest</a>
+		</nav>
+	</div>
+</template>

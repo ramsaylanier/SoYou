@@ -1,0 +1,14 @@
+.create-award-form{
+	width: 100%;
+}
+
+.form-control{
+	border-top: 1px solid darken(white, 10%);
+}
+
+input[type=text], input[type=url]{
+	border: 0;
+	width: 100%;
+	font-size: 1rem;
+	padding: 1rem;
+}

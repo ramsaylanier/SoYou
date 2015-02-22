@@ -1,0 +1,26 @@
+$heading: "acta-display", serif;
+$copy: "franklin-gothic-urw",sans-serif;
+
+a{
+	text-decoration: none;
+}
+
+body, p{
+	font-family: $copy;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: $heading;
+}
+
+.strong{
+	font-weight: 700;
+}
+
+.uppercase{
+	text-transform: uppercase;
+}
+
+.underlined{
+	text-decoration: underline;
+}

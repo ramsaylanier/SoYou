@@ -1,0 +1,30 @@
+<template name="awardsList">
+	<div class="page {{awardType}}-page">
+		<div class="award-type {{awardType}}">
+			<div class="award-link">
+				<div class="wrapper">
+					<h1 class="award-title">{{awardType}}</h1>
+				</div>
+			</div>
+		</div>
+		<div class="awards-list {{awardType}}-list">
+			<div class="wrapper">
+				{{#if currentUser}}
+					<button class="cta-btn {{awardType}}-btn">Tell someone they're the {{awardType}}</button>
+				{{else}}
+					<button class="twitter-login-btn small-btn">Login With Twitter</button>
+				{{/if}}
+			
+				{{#each awards}}
+					{{> awardSingle}}
+				{{/each}}
+
+				{{#if isReady}}
+				    {{#if nextPath}}
+					    <button class="load-more-btn primary-btn {{awardType}}-btn">Load More</button>
+				    {{/if}}
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</template>

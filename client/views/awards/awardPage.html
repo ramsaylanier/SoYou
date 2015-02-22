@@ -1,0 +1,21 @@
+<template name="awardPage">
+	<div class="modal {{type}}-modal non-fixed">
+		<div class="modal-content">
+			<div class="modal-header">
+				<p class="typl8-gamma uppercase white no-margin strong">@{{name}}</p>
+				<button class="close-btn">&#10006;</button>
+			</div>
+			{{#if gif}}
+				<div class="award-gif">
+					<img src="{{gif}}"/>
+				</div>
+			{{/if}}
+			<div class="award-path {{type}}">
+				<a href="http://twitter.com/{{creator}}" class="strong {{type}}" target="_blank">@{{creator}}</a> thinks 
+				<a href="http://twitter.com/{{name}}" class="strong {{type}}" target="_blank">@{{name}}</a>
+				is the <span class="award-name">{{type}}</span> because
+				<span>{{message}}</span>
+			</div>
+		</div>
+	</div>
+</template>

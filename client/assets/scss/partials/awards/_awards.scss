@@ -1,0 +1,229 @@
+.award-type{
+	position: relative;
+	overflow: hidden;
+	height: 20%;
+	left: 100vw;
+
+	&.worst{ 
+		background-color: $red;
+
+		&:hover{
+			background-color: lighten($red, 10%);
+		}
+	}
+	
+	&.best{
+		background-color: $orange;
+
+		&:hover{
+			background-color: lighten($orange, 5%);
+		}
+	}
+
+	&.funniest{
+		background-color: $green;
+
+		&:hover{
+			background-color: lighten($green, 5%);
+		}
+	}
+
+	&.coolest{
+		background-color: $darkBlue;
+
+		&:hover{
+			background-color: lighten($darkBlue, 5%);
+		}
+	}
+
+	&.weirdest{
+		background-color: $purple;
+
+		&:hover{
+			background-color: lighten($purple, 5%);
+		}
+	}
+}
+
+.award-link{
+	font-family: $heading;
+	display: block;
+	height: 100%;
+}
+
+.award-title{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	color: white;
+	font-size: 18vw;
+	font-weight: 700;
+	font-style: italic;
+	margin: 0;
+}
+
+.awards-list{
+	margin-top: 2rem;
+	padding-bottom: 5rem;
+
+	&.worst-list{
+		.award-score{
+			background-color: $red;
+		}
+	}
+
+	&.best-list{
+		.award-score{
+			background-color: $orange;
+		}
+	}
+
+	&.funniest-list{
+		.award-score{
+			background-color: $green;
+		}
+	}
+
+	&.coolest-list{
+		.award-score{
+			background-color: $darkBlue;
+		}
+	}
+
+	&.weirdest-list{
+		.award-score{
+			background-color: $purple;
+		}
+	}
+}
+
+.award-item{
+	width: 100%;
+	position: relative;
+	left: 50vw;
+	margin-bottom: 1rem;
+	background-color: darken(white, 5%);
+	color: lighten(black, 30%);
+	opacity: 0;
+
+	& *{
+		margin: 0;
+	}
+
+	&.worst{
+		.award-username{
+			color: $red;
+		}
+
+		.award-date{
+			color: $red;
+		}
+	}
+
+	&.best{
+		.award-username{
+			color: $orange;
+		}
+
+		.award-date{
+			color: $orange;
+		}
+	}
+
+	&.funniest{
+		.award-username{
+			color: $green;
+		}
+
+		.award-date{
+			color: $green;
+		}
+	}
+
+	&.coolest{
+		.award-username{
+			color: $darkBlue;
+		}
+
+		.award-date{
+			color: $darkBlue;
+		}
+	}
+
+	&.weirdest{
+		.award-username{
+			color: $purple;
+		}
+
+		.award-date{
+			color: $purple;
+		}
+	}
+}
+
+.award-score{
+	position: relative;
+	padding: .5rem;
+	text-align: center;
+	color: white;
+	@include flex(1 30px);
+	border-bottom: 10px inset fade-out(black, .7);
+
+	&.upvoted{
+		opacity: .5;
+	}
+
+	@media #{$mobile}{
+		position: absolute;
+		width: 25px;
+		left: -10px;
+		padding: 0;
+	}
+}
+
+.award-text{
+	@include flex(16);
+	line-height: 1.2rem;
+	color: lighten(black, 30%);
+}
+
+.award-path{
+	padding: 1rem;
+	color: lighten(black, 30%);
+}
+
+.award-date{
+	@include flex(2);
+	text-align: center;
+	background-color: white;
+	border: 5px solid darken(white, 5%);
+	position: relative;
+
+	p{
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		transform: translateY(-50%);
+	}
+}
+
+.award-name{
+	font-weight: 900;
+}
+
+.award-username{
+	font-weight: 700;
+}
+
+.award-preview{
+	padding: 1rem;
+}
+
+.award-gif{
+	padding-top: 5px;
+	text-align: center;
+	img{
+		max-width: 100%;
+		max-height: 40vh;
+	}
+}

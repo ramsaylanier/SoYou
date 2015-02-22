@@ -1,0 +1,19 @@
+<template name="awardSingle">
+	<div class="award-item flex-container {{type}}">
+		<div class="award-score {{upvoted}}">
+			<p>{{score}}</p>
+			<a href="#" class="up-vote-btn white"></a>
+		</div>
+		<div class="award-text">
+			<a class="award-path flex-container" href="{{pathFor route='awardPage'}}">
+				<a href="#" class="award-username">@{{name}}</a>
+				is the <span class="award-name">{{type}}</span> because
+				<span>{{message}}</span>
+			</a>
+		</div>
+		<div class="award-date">
+			<p>{{createdOnDate}}<br>
+			{{createdOnYear}}</p>
+		</div>
+	</div>
+</template>

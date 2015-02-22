@@ -1,0 +1,33 @@
+<template name="createAward">
+	<div class="modal {{awardType}}-modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<p>Who is the {{awardType}}?</p>
+				<button class="close-btn">&#10006;</button>
+			</div>
+			<div class="award-gif">
+				<img class="award-gif-image" src="{{awardGif}}" />
+			</div>
+			<form name="create-award-form" class="create-award-form">
+				<div class="form-control">
+					<input type="text" placeholder="Awardee Twitter Username"  name="award-username-field" class="award-username-field">
+				</div>
+				<div class="form-control">
+					<input type="text" placeholder="Reason" name="award-reason-field" class="award-reason-field">
+				</div>
+				<div class="form-control">
+					<input type="url" placeholder="Gif URL" name="award-gif-field" class="award-gif-field">
+				</div>
+				<div class="form-control award-preview">
+					<p><span class="strong underlined">@<span class="preview-username">Username</span></span> is the {{awardType}} because <span class="preview-reason strong underlined">reason</span></p>
+				</div>
+				<div  class="form-control">
+					<button class="random-gif-btn {{awardType}}-btn">Generate Random Gif</button>
+				</div>
+				<div class="form-control">
+					<input type="submit" class="submit-btn create-award-btn {{awardType}}-btn" value="Create Award">
+				</div>
+			</form>
+		</div>
+	</div>
+</template>

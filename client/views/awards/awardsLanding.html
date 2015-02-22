@@ -1,0 +1,13 @@
+<template name="awardsLanding">
+	<div class="page">
+		{{#each awardTypes}}
+			<div class="award-type {{name}}">
+				<a class="award-link" href="/{{name}}">
+					<div class="wrapper">
+						<h1 class="award-title">{{name}}</h1>
+					</div>
+				</a>
+			</div>
+		{{/each}}
+	</div>
+</template>
