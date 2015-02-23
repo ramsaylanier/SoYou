@@ -1,16 +1,16 @@
 //remove any old configurations on startup
 ServiceConfiguration.configurations.remove();
 
-ServiceConfiguration.configurations.upsert(
-	{ service: "facebook" },
-		{
-		$set: {
-		  appId: Meteor.settings.facebook.appId,
-		  loginStyle: "popup",
-		  secret: Meteor.settings.facebook.secret
-		}
-	}
-);
+// ServiceConfiguration.configurations.upsert(
+// 	{ service: "facebook" },
+// 		{
+// 		$set: {
+// 		  appId: Meteor.settings.facebook.appId,
+// 		  loginStyle: "popup",
+// 		  secret: Meteor.settings.facebook.secret
+// 		}
+// 	}
+// );
 
 ServiceConfiguration.configurations.upsert(
 	{ service: "twitter" },
