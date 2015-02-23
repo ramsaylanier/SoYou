@@ -19,3 +19,4 @@ fastclick
 http
 momentjs:moment
 reactive-var
+mystor:device-detection

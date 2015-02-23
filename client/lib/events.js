@@ -1,13 +1,13 @@
 Template.layout.events({
 	'click .twitter-login-btn': function(){
-		var loginStyle = 'popup';
-		var device = Session.get('device');
+		// var loginStyle = 'popup';
+		// var device = Session.get('device');
 
 		// if (device == 'phone' || device == 'tablet'){
 		// 	loginStyle = 'redirect'
 		// }
 
-		Meteor.loginWithTwitter({loginStyle: loginStyle}, function(error){
+		Meteor.loginWithTwitter(function(error){
 			if (error){
 				Errors.throw(error, 'error');
 				console.log(error);
@@ -32,4 +32,17 @@ Template.layout.events({
 	'click .close-btn': function(){
 		checkModalState();
 	},
+})
+
+Meteor.startup(function(){
+	var loginStyle = "popup";
+
+	if (Meteor.Device.isPhone()){
+		loginStyle = "redirect";
+	}
+
+	Meteor.call('serviceConfig', loginStyle, function(error){
+		if (error)
+			Errors.throw(error.reason, 'error')
+	})
 })

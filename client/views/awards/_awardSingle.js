@@ -1,8 +1,6 @@
 Template.awardSingle.helpers({
-	awardType: function(){
-		return Router.current().params.awardType;
-	},
 	createdOnDate: function(){
+		console.log(Router.current());
 		return moment(this.date).format('MMM D');
 	},
 	createdOnYear: function(){

@@ -71,6 +71,10 @@
 	background-color: white;
 	overflow: auto;
 	border: 5px solid white;
+
+	@media #{$mobile}{
+		width: 95%;
+	}
 }
 
 .modal-header{

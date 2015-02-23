@@ -8,6 +8,8 @@ Template.account.events({
 		e.preventDefault();
 		var url = $(e.currentTarget).attr('href');
 
+		console.log(url);
+		console.log(window.location);
 		if (url !== window.location.pathname){
 			awardListOut(url);
 		}

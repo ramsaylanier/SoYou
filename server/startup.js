@@ -1,5 +1,3 @@
-//remove any old configurations on startup
-ServiceConfiguration.configurations.remove();
 
 // ServiceConfiguration.configurations.upsert(
 // 	{ service: "facebook" },
@@ -12,19 +10,33 @@ ServiceConfiguration.configurations.remove();
 // 	}
 // );
 
-ServiceConfiguration.configurations.upsert(
-	{ service: "twitter" },
+Meteor.methods({
+	serviceConfig: function(loginStyle){
+		ServiceConfiguration.configurations.upsert(
+		{ service: "twitter" },
 		{
-		$set: {
-		  consumerKey: Meteor.settings.twitter.public,
-		  loginStyle: "popup",
-		  secret: Meteor.settings.twitter.private
-		}
+			$set: {
+			  consumerKey: Meteor.settings.twitter.public,
+			  loginStyle: loginStyle,
+			  secret: Meteor.settings.twitter.private
+			}
+		});
 	}
-);
+	// ServiceConfiguration.configurations.upsert(
+	// 	{ service: "facebook" },
+	// 		{
+	// 		$set: {
+	// 		  appId: Meteor.settings.facebook.appId,
+	// 		  loginStyle: "popup",
+	// 		  secret: Meteor.settings.facebook.secret
+	// 		}
+	// 	}
+	// );
+})
 
 Meteor.startup(function(){
-	// if (Awards.find().count() == 0){
+	ServiceConfiguration.configurations.remove();
+	// if (Awards.find().count() < 300){
 	// 	var counter = 0;
 
 	// 	while(counter < 300){

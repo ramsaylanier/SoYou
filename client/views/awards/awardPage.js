@@ -8,7 +8,7 @@ Template.awardPage.events({
 
 		console.log(Router.current().params);
 		Meteor.setTimeout(function(){
-			Router.go("/" + Router.current().params.type);
+			Router.go("/the/" + Router.current().params.type);
 		}, 500);
 	}
 })
