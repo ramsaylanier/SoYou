@@ -9,13 +9,12 @@
 		</div>
 		<div class="awards-list {{awardType}}-list">
 			<div class="wrapper">
-				{{#if currentUser}}
-					<button class="cta-btn {{awardType}}-btn">Tell someone they're the {{awardType}}</button>
-				{{else}}
-					<button class="twitter-login-btn small-btn">Login With Twitter</button>
-				{{/if}}
-				
 				<div class="awards-wrapper">
+					{{#if currentUser}}
+						<button class="cta-btn {{awardType}}-btn">Tell someone they're the {{awardType}}</button>
+					{{else}}
+						<button class="twitter-login-btn small-btn">Login With Twitter</button>
+					{{/if}}
 					{{#each awards}}
 						{{> awardSingle}}
 					{{/each}}

@@ -56,19 +56,31 @@ landingPageOut = function(url){
 
 awardListOut = function(url){
 	closeMenuState();
+	awardItemsOut(url);
 	awardTypeOut($('.award-type'));
+
+	$('.page').velocity({
+		"opacity": 0
+	}, 200, "easeOutQuant")
 
 	//reset awardLimit
 	Session.set('awardLimit', 15);
 
 	Meteor.setTimeout(function(){
-		awardItemsOut(url);
+		
 	}, 300);
 }
 
 awardListIn = function(){
 	pageIn();
-	awardItemsIn();
+
+	$('.page').velocity({
+		"opacity": 1
+	}, 200, "easeOutQuant")
+
+	Meteor.setTimeout(function(){
+		awardItemsIn();
+	}, 300)
 
 	if (!$('.award-type').hasClass('animated-in')){
 		awardTypeIn($('.award-type'));
@@ -175,7 +187,7 @@ pageZoomIn = function(){
 	page.velocity({
 		"opacity":"1.0",
 		"scale":"1"
-	}, {duration: 1000, easing: easingFunc, delay: 100});
+	}, {duration: 500, easing: easingFunc, delay: 100});
 }
 
 pageZoomOut = function(url){
@@ -183,7 +195,7 @@ pageZoomOut = function(url){
 	page.velocity({
 		"opacity":"0.0",
 		"scale":".9"
-	}, 1000, easingFunc);
+	}, 500, easingFunc);
 
 	if (url){
 		Meteor.setTimeout(function(){
@@ -202,7 +214,8 @@ pageOut = function(){
 pageIn = function(){
 	var page = $('.page');
 	page.velocity({
-		"left": "0px"
+		"left": "0px",
+		"opacity": 1
 	}, 300, easingFunc);
 }
 
@@ -263,7 +276,7 @@ modalZoomIn = function(){
 	.velocity({
 		"opacity":"1.0",
 		"scale":"1.0"
-	}, {duration: 1000, easing: easingFunc, delay: 100});
+	}, {duration: 500, easing: easingFunc, delay: 100});
 }
 
 modalZoomOut = function(url){
@@ -278,5 +291,5 @@ modalZoomOut = function(url){
 		if (url){
 			Router.go(url);
 		}
-	}, 1000);
+	}, 500);
 }
