@@ -12,3 +12,11 @@ input[type=text], input[type=url]{
 	font-size: 1rem;
 	padding: 1rem;
 }
+
+input[type=submit]{
+	transition: all 300ms ease-out;
+	&:disabled{
+		opacity: .3;
+		cursor: initial;
+	}
+}

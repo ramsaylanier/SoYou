@@ -457,6 +457,9 @@ h1, h2, h3, h4, h5, h6 {
 .no-margin {
   margin: 0; }
 
+.t-a-center {
+  text-align: center; }
+
 .btn, .clear-btn, .close-btn, .primary-btn, .large-btn, .cta-btn, .twitter-login-btn, .tweet-this-btn, .facebook-login-btn, .random-gif-btn, .submit-btn {
   border: 0;
   padding: .25em .5em;
@@ -822,6 +825,13 @@ input[type=text], input[type=url] {
   width: 100%;
   font-size: 1rem;
   padding: 1rem; }
+
+input[type=submit] {
+  -webkit-transition: all 300ms ease-out;
+          transition: all 300ms ease-out; }
+  input[type=submit]:disabled {
+    opacity: .3;
+    cursor: initial; }
 
 .alert-error {
   padding: 1rem;

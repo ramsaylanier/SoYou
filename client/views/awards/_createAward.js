@@ -23,6 +23,15 @@ Template.createAward.events({
 
 		$('.preview-username').text(username);
 		$('.preview-reason').text(reason);
+
+		var charactersLeft = 143 - $('.award-preview p').text().length;
+		$('.award-length').text(charactersLeft);
+
+		if (charactersLeft < 0){
+			$('.submit-btn').prop('disabled', true);
+		} else {
+			$('.submit-btn').prop('disabled', false);
+		}
 	},
 	'keyup .award-gif-field': function(e){
 		var image = $(e.currentTarget).val();
