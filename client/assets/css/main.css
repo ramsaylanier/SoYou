@@ -460,7 +460,7 @@ h1, h2, h3, h4, h5, h6 {
 .t-a-center {
   text-align: center; }
 
-.btn, .clear-btn, .close-btn, .primary-btn, .large-btn, .cta-btn, .twitter-login-btn, .tweet-this-btn, .facebook-login-btn, .random-gif-btn, .submit-btn {
+.btn, .clear-btn, .close-btn, .primary-btn, .large-btn, .cta-btn, .twitter-login-btn, .tweet-this-btn, .delete-award-btn, .facebook-login-btn, .random-gif-btn, .submit-btn {
   border: 0;
   padding: .25em .5em;
   font-size: .9rem;
@@ -486,19 +486,19 @@ h1, h2, h3, h4, h5, h6 {
   top: 15px;
   right: 15px; }
 
-.twitter-login-btn, .tweet-this-btn, .facebook-login-btn {
+.twitter-login-btn, .tweet-this-btn, .delete-award-btn, .facebook-login-btn {
   padding: 1rem;
   display: block;
   width: 100%;
   color: white; }
-  .twitter-login-btn.small-btn, .tweet-this-btn, .facebook-login-btn.small-btn, .facebook-login-btn.tweet-this-btn {
+  .twitter-login-btn.small-btn, .tweet-this-btn, .small-btn.delete-award-btn, .facebook-login-btn.small-btn, .facebook-login-btn.tweet-this-btn {
     width: auto;
     margin: 1rem auto; }
 
 .tweet-this-btn {
   text-align: center; }
 
-.twitter-login-btn, .tweet-this-btn {
+.twitter-login-btn, .tweet-this-btn, .delete-award-btn {
   background-color: #55acee; }
 
 .facebook-login-btn {
@@ -554,6 +554,9 @@ h1, h2, h3, h4, h5, h6 {
     border-top: 12px solid transparent;
     -webkit-transition: all 300ms ease-out;
             transition: all 300ms ease-out; }
+
+.delete-award-btn {
+  background-color: #f73d3d; }
 
 .award-type {
   position: relative;
@@ -836,6 +839,8 @@ input[type=submit] {
 .alert-error {
   padding: 1rem;
   background-color: #f73d3d; }
+  .alert-error.success {
+    background-color: #55ad3d; }
 
 .blocks {
   width: 200px;

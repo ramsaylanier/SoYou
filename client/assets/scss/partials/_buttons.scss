@@ -124,3 +124,8 @@
 
 	}
 }
+
+.delete-award-btn{
+	background-color: $red;
+	@extend .twitter-login-btn;
+}

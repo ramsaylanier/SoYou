@@ -17,6 +17,9 @@
 				<span>{{message}}</span>
 
 				<a class="tweet-this-btn" href="https://twitter.com/intent/tweet?text={{tweetText}}&url={{tweetURL}}">Share On Twitter</a>
+				{{#if canDelete}}
+					<button class="delete-award-btn">Delete Award</button>
+				{{/if}}
 			</div>
 		</div>
 	</div>
