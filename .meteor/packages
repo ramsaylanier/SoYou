@@ -20,3 +20,11 @@ http
 momentjs:moment
 reactive-var
 mystor:device-detection
+jparker:crypto-md5
+jparker:crypto-base64
+meteorhacks:npm
+
+
+npm-container
+jparker:crypto-hmac
+jparker:crypto-sha1

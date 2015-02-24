@@ -1,6 +1,5 @@
 Template.awardSingle.helpers({
 	createdOnDate: function(){
-		console.log(Router.current());
 		return moment(this.date).format('MMM D');
 	},
 	createdOnYear: function(){

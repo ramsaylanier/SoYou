@@ -263,7 +263,7 @@ modalZoomIn = function(){
 	}, {duration: 1000, easing: easingFunc, delay: 100});
 }
 
-modalZoomOut = function(){
+modalZoomOut = function(url){
 	var modal = $('.modal');
 	modal.velocity({
 		"opacity":"0",
@@ -272,5 +272,8 @@ modalZoomOut = function(){
 
 	Meteor.setTimeout(function(){
 		modal.remove();
+		if (url){
+			Router.go(url);
+		}
 	}, 1000);
 }

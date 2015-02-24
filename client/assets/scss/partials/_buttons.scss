@@ -46,6 +46,12 @@
 	}
 }
 
+.tweet-this-btn{
+	@extend .twitter-login-btn;
+	@extend .small-btn;
+	text-align: center;
+}
+
 .twitter-login-btn{
 	background-color: $lightBlue;
 }

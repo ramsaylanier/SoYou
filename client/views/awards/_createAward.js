@@ -69,7 +69,8 @@ Template.createAward.events({
 					new Errors.throw(error.reason, 'error')
 				}
 				else{
-					checkModalState();
+					var url = '/the/' + getAwardType() + '/' + result;
+					modalZoomOut(url);
 				}
 			})
 		}

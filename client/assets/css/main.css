@@ -457,7 +457,7 @@ h1, h2, h3, h4, h5, h6 {
 .no-margin {
   margin: 0; }
 
-.btn, .clear-btn, .close-btn, .primary-btn, .large-btn, .cta-btn, .twitter-login-btn, .facebook-login-btn, .random-gif-btn, .submit-btn {
+.btn, .clear-btn, .close-btn, .primary-btn, .large-btn, .cta-btn, .twitter-login-btn, .tweet-this-btn, .facebook-login-btn, .random-gif-btn, .submit-btn {
   border: 0;
   padding: .25em .5em;
   font-size: .9rem;
@@ -483,16 +483,19 @@ h1, h2, h3, h4, h5, h6 {
   top: 15px;
   right: 15px; }
 
-.twitter-login-btn, .facebook-login-btn {
+.twitter-login-btn, .tweet-this-btn, .facebook-login-btn {
   padding: 1rem;
   display: block;
   width: 100%;
   color: white; }
-  .twitter-login-btn.small-btn, .facebook-login-btn.small-btn {
+  .twitter-login-btn.small-btn, .tweet-this-btn, .facebook-login-btn.small-btn, .facebook-login-btn.tweet-this-btn {
     width: auto;
     margin: 1rem auto; }
 
-.twitter-login-btn {
+.tweet-this-btn {
+  text-align: center; }
+
+.twitter-login-btn, .tweet-this-btn {
   background-color: #55acee; }
 
 .facebook-login-btn {
