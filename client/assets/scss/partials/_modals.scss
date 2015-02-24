@@ -5,6 +5,7 @@
 	height: 100%;
 	width: 100%;
 	opacity: 0.0;
+	background-color: white;
 
 	&.non-fixed{
 		position: relative;
@@ -71,6 +72,11 @@
 	background-color: white;
 	overflow: auto;
 	border: 5px solid white;
+
+	&.wide{
+		max-width: 800px;
+		overflow: visible;
+	}
 
 	@media #{$mobile}{
 		width: 95%;

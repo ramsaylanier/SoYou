@@ -1,4 +1,4 @@
-Template.loadingBlocks.rendered = function(){
+Template.loading.rendered = function(){
 	modalZoomIn();
 	startLoading();
 }

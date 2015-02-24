@@ -759,7 +759,8 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   height: 100%;
   width: 100%;
-  opacity: 0.0; }
+  opacity: 0.0;
+  background-color: white; }
   .modal.non-fixed {
     position: relative;
     height: auto;
@@ -806,6 +807,9 @@ h1, h2, h3, h4, h5, h6 {
   background-color: white;
   overflow: auto;
   border: 5px solid white; }
+  .modal-content.wide {
+    max-width: 800px;
+    overflow: visible; }
   @media only screen and (max-width: 568px) {
     .modal-content {
       width: 95%; } }
