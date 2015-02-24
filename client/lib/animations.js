@@ -58,6 +58,9 @@ awardListOut = function(url){
 	closeMenuState();
 	awardTypeOut($('.award-type'));
 
+	//reset awardLimit
+	Session.set('awardLimit', 15);
+
 	Meteor.setTimeout(function(){
 		awardItemsOut(url);
 	}, 300);
@@ -73,7 +76,7 @@ awardListIn = function(){
 }
 
 awardItemsIn = function(){
-	var awardItems = $('.award-item');
+	var awardItems = $('.award-item').not('.animated-in');
 
 	_.each(awardItems, function(award, index){
 		Meteor.setTimeout(function(){
@@ -227,7 +230,7 @@ awardItemIn = function(item){
 	item.velocity({
 		"left": "0vw",
 		"opacity": 1
-	}, 300, "easeOutQuad");
+	}, 300, "easeOutQuad").addClass('animated-in');
 }
 
 awardItemOut = function(item){

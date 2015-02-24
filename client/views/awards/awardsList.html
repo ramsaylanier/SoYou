@@ -14,15 +14,22 @@
 				{{else}}
 					<button class="twitter-login-btn small-btn">Login With Twitter</button>
 				{{/if}}
-			
-				{{#each awards}}
-					{{> awardSingle}}
-				{{/each}}
+				
+				<div class="awards-wrapper">
+					{{#each awards}}
+						{{> awardSingle}}
+					{{/each}}
+				</div>
 
 				{{#if isReady}}
-				    {{#if nextPath}}
-					    <button class="load-more-btn primary-btn {{awardType}}-btn">Load More</button>
+				    {{#if hasMore}}
+				    	<div class="show-more-awards">
+						    {{!-- <button class="load-more-btn primary-btn {{awardType}}-btn">Load More</button> --}}
+					    	{{> loadingBlocks}}
+					    </div>
 				    {{/if}}
+				{{else}}
+					{{> loading}}
 				{{/if}}
 			</div>
 		</div>

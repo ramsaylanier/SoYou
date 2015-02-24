@@ -1,11 +1,15 @@
-<template name="loadingBlocks">
+<template name="loading">
 	<div class="modal">
 		<div class="blocks">
-			<div class="block orange-block"></div>
-			<div class="block red-block"></div>
-			<div class="block green-block"></div>
-			<div class="block blue-block"></div>
-			<div class="block purple-block"></div>
+			{{> loadingBlocks}}
 		</div>
 	</div>
+</template>
+
+<template name="loadingBlocks">
+	<div class="block orange-block"></div>
+	<div class="block red-block"></div>
+	<div class="block green-block"></div>
+	<div class="block blue-block"></div>
+	<div class="block purple-block"></div>
 </template>
