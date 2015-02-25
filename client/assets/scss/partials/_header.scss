@@ -14,7 +14,7 @@
 	.bar{
 		position: relative;
 		width: 25px;
-		background-color: lighten(black, 95%);
+		background-color: lighten(black, 25%);
 		height: 4px;
 		margin-bottom: 4px;
 		border-radius: 1px;
@@ -68,20 +68,36 @@
 }
 
 .nav-link{
+	border-left: 5px solid white;
 	&.best-link{
 		color: $orange;
+		border-color: $orange;
 	}
 	&.worst-link{
 		color: $red;
+		border-color: $red;
 	}
 	&.funniest-link{
 		color: $green;
+		border-color: $green;
 	}
 	&.coolest-link{
 		color: $darkBlue;
+		border-color: $darkBlue;
 	}
 	&.weirdest-link{
 		color: $purple;
+		border-color: $purple;
+	}
+
+	&.about-link{
+		background-color: $darkBlue;
+		color: white;
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		border: 0;
+		width: 200px;
 	}
 }
 

@@ -360,7 +360,7 @@ p + .typl8-drop-cap {
   .menu-toggle .bar {
     position: relative;
     width: 25px;
-    background-color: #f2f2f2;
+    background-color: #404040;
     height: 4px;
     margin-bottom: 4px;
     border-radius: 1px;
@@ -398,16 +398,31 @@ p + .typl8-drop-cap {
 .account-nav {
   margin-top: 4rem; }
 
-.nav-link.best-link {
-  color: #EFA12A; }
-.nav-link.worst-link {
-  color: #f73d3d; }
-.nav-link.funniest-link {
-  color: #55ad3d; }
-.nav-link.coolest-link {
-  color: #3a5795; }
-.nav-link.weirdest-link {
-  color: #b654cb; }
+.nav-link {
+  border-left: 5px solid white; }
+  .nav-link.best-link {
+    color: #EFA12A;
+    border-color: #EFA12A; }
+  .nav-link.worst-link {
+    color: #f73d3d;
+    border-color: #f73d3d; }
+  .nav-link.funniest-link {
+    color: #55ad3d;
+    border-color: #55ad3d; }
+  .nav-link.coolest-link {
+    color: #55acee;
+    border-color: #55acee; }
+  .nav-link.weirdest-link {
+    color: #b654cb;
+    border-color: #b654cb; }
+  .nav-link.about-link {
+    background-color: #55acee;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border: 0;
+    width: 200px; }
 
 .dashboard-link {
   color: #EFA12A; }
@@ -449,7 +464,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #55ad3d; }
 
 .coolest {
-  color: #3a5795; }
+  color: #55acee; }
 
 .weirdest {
   color: #b654cb; }
@@ -502,7 +517,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #55acee; }
 
 .facebook-login-btn {
-  background-color: #3a5795; }
+  background-color: #55acee; }
 
 .cta-btn {
   color: white;
@@ -525,7 +540,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #EFA12A; }
 
 .coolest-btn {
-  background-color: #3a5795; }
+  background-color: #55acee; }
 
 .funniest-btn {
   background-color: #55ad3d; }
@@ -576,9 +591,9 @@ h1, h2, h3, h4, h5, h6 {
     .award-type.funniest:hover {
       background-color: #5fbe46; }
   .award-type.coolest {
-    background-color: #3a5795; }
+    background-color: #55acee; }
     .award-type.coolest:hover {
-      background-color: #4162a7; }
+      background-color: #6cb7f0; }
   .award-type.weirdest {
     background-color: #b654cb; }
     .award-type.weirdest:hover {
@@ -611,7 +626,7 @@ h1, h2, h3, h4, h5, h6 {
   .awards-list.funniest-list .award-score {
     background-color: #55ad3d; }
   .awards-list.coolest-list .award-score {
-    background-color: #3a5795; }
+    background-color: #55acee; }
   .awards-list.weirdest-list .award-score {
     background-color: #b654cb; }
 
@@ -647,9 +662,9 @@ h1, h2, h3, h4, h5, h6 {
   .award-item.funniest .award-date {
     color: #55ad3d; }
   .award-item.coolest .award-username {
-    color: #3a5795; }
+    color: #55acee; }
   .award-item.coolest .award-date {
-    color: #3a5795; }
+    color: #55acee; }
   .award-item.weirdest .award-username {
     color: #b654cb; }
   .award-item.weirdest .award-date {
@@ -787,9 +802,9 @@ h1, h2, h3, h4, h5, h6 {
     .modal.funniest-modal .modal-header {
       background-color: #55ad3d; }
   .modal.coolest-modal {
-    background-color: #4a6db8; }
+    background-color: #83c3f3; }
     .modal.coolest-modal .modal-header {
-      background-color: #3a5795; }
+      background-color: #55acee; }
   .modal.weirdest-modal {
     background-color: #c77bd7; }
     .modal.weirdest-modal .modal-header {
@@ -868,7 +883,7 @@ input[type=submit] {
   .block.green-block {
     background-color: #55ad3d; }
   .block.blue-block {
-    background-color: #3a5795; }
+    background-color: #55acee; }
   .block.purple-block {
     background-color: #b654cb; }
 

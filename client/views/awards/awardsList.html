@@ -19,18 +19,17 @@
 						{{> awardSingle}}
 					{{/each}}
 				</div>
-
-				{{#if isReady}}
-				    {{#if hasMore}}
-				    	<div class="show-more-awards">
-						    {{!-- <button class="load-more-btn primary-btn {{awardType}}-btn">Load More</button> --}}
-					    	{{> loadingBlocks}}
-					    </div>
-				    {{/if}}
-				{{else}}
-					{{> loading}}
-				{{/if}}
 			</div>
 		</div>
 	</div>
+
+	{{#if isReady}}
+	    {{#if hasMore}}
+	    	<div class="show-more-awards">
+			    {{!-- <button class="load-more-btn primary-btn {{awardType}}-btn">Load More</button> --}}
+		    </div>
+	    {{/if}}
+	{{else}}
+		{{> loading}}
+	{{/if}}
 </template>

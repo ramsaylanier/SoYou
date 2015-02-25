@@ -65,10 +65,6 @@ awardListOut = function(url){
 
 	//reset awardLimit
 	Session.set('awardLimit', 15);
-
-	Meteor.setTimeout(function(){
-		
-	}, 300);
 }
 
 awardListIn = function(){

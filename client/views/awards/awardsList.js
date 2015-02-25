@@ -91,7 +91,9 @@ Template.awardsList.helpers({
 Template.awardsList.events({
 	'click .cta-btn': function(){
 		Blaze.render(Template.createAward, $('.application').get(0));
+		closeMenuState();
 		switchModalState();
+
 	},
 	'click .load-more-btn': function (event, instance) {
 		event.preventDefault();
