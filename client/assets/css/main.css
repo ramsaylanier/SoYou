@@ -418,11 +418,8 @@ p + .typl8-drop-cap {
   .nav-link.about-link {
     background-color: #55acee;
     color: white;
-    position: fixed;
-    bottom: 0;
-    right: 0;
     border: 0;
-    width: 200px; }
+    margin-top: 3rem; }
 
 .dashboard-link {
   color: #EFA12A; }
