@@ -810,7 +810,7 @@ h1, h2, h3, h4, h5, h6 {
 .modal-content {
   position: absolute;
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   max-height: 90vh;
   left: 50%;
   top: 50%;
@@ -827,7 +827,7 @@ h1, h2, h3, h4, h5, h6 {
       width: 95%; } }
 
 .modal-header {
-  padding: 2rem;
+  padding: 2.5rem .5rem;
   color: white;
   text-align: center; }
   .modal-header p {
