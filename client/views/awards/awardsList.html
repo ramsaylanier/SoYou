@@ -15,6 +15,11 @@
 					{{else}}
 						<button class="twitter-login-btn small-btn">Login With Twitter</button>
 					{{/if}}
+
+					<div class="sort-options t-a-center">
+						<button class="date-sort-btn sort-btn {{checkSort}}">Most recent</button>
+						<button class="score-sort-btn sort-btn {{checkSort}}">The {{awardType}}</button>
+					</div>
 					{{#each awards}}
 						{{> awardSingle}}
 					{{/each}}

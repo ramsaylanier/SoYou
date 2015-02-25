@@ -472,7 +472,7 @@ h1, h2, h3, h4, h5, h6 {
 .t-a-center {
   text-align: center; }
 
-.btn, .clear-btn, .close-btn, .primary-btn, .large-btn, .cta-btn, .twitter-login-btn, .tweet-this-btn, .delete-award-btn, .facebook-login-btn, .random-gif-btn, .submit-btn {
+.btn, .clear-btn, .close-btn, .primary-btn, .large-btn, .cta-btn, .twitter-login-btn, .tweet-this-btn, .delete-award-btn, .facebook-login-btn, .random-gif-btn, .submit-btn, .sort-btn {
   border: 0;
   padding: .25em .5em;
   font-size: .9rem;
@@ -569,6 +569,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .delete-award-btn {
   background-color: #f73d3d; }
+
+.sort-btn {
+  font-size: 1.1rem;
+  padding: .75rem;
+  border-bottom: 5px inset rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+  color: white;
+  text-transform: capitalize;
+  -webkit-transition: background-color 300ms ease-out;
+          transition: background-color 300ms ease-out; }
+  .sort-btn.active {
+    background-color: #f73d3d; }
 
 .award-type {
   position: relative;

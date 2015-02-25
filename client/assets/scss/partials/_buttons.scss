@@ -129,3 +129,18 @@
 	background-color: $red;
 	@extend .twitter-login-btn;
 }
+
+.sort-btn{
+	font-size: 1.1rem;
+	padding: .75rem;
+	border-bottom: 5px inset fade-out(black, .8);
+	margin-bottom: 1rem;
+	color: white;
+	text-transform: capitalize;
+	@extend .btn;
+	transition: background-color 300ms ease-out;
+
+	&.active{
+		background-color: $red;
+	}
+}

@@ -3,11 +3,13 @@ Template.awardsList.created = function(){
   var instance = this;
   instance.loaded = new ReactiveVar(0);
   instance.ready = new ReactiveVar(false);
+  instance.sortBy = new ReactiveVar('date');
 
   Session.set('awardLimit', 15);
+  Session.set('sortBy', 'date');
 
   instance.autorun(function () {
-  	var sortBy = Session.get('sortBy') || 'date';
+  	var sortBy = Session.get('sortBy');
     var limit = Session.get('awardLimit');
     var awardType = getAwardType();
     var options;
@@ -21,6 +23,7 @@ Template.awardsList.created = function(){
 
     if (subscription.ready()) {
       instance.loaded.set(limit);
+      instance.sortBy.set(sortBy);
       instance.ready.set(true);
     } else {
       instance.ready.set(false);
@@ -28,7 +31,12 @@ Template.awardsList.created = function(){
   });
 
   instance.awards = function() { 
-    return Awards.find({type: getAwardType()}, {limit: instance.loaded.get()});
+  	var sortBy = instance.sortBy.get();
+
+  	if (sortBy == 'date')
+	    return Awards.find({type: getAwardType()}, {sort: {date: -1}, limit: instance.loaded.get()});
+	else
+		return Awards.find({type: getAwardType()}, {sort: {score: -1}, limit: instance.loaded.get()});
   }
 }
 
@@ -85,6 +93,15 @@ Template.awardsList.helpers({
 	},
 	hasMore: function(){
 		return Template.instance().awards().count() >= Session.get('awardLimit')
+	},
+	checkSort: function(){
+		var sort = Session.get('sortBy');
+		$('.sort-btn').removeClass('active');
+
+		if (sort == 'date'){
+			$('.date-sort-btn').addClass('active');
+		} else 
+			$('.score-sort-btn').addClass('active');
 	}
 })
 
@@ -105,5 +122,15 @@ Template.awardsList.events({
 
 	    limit += 15;
 	    Session.set('awardLimit', limit);
+	},
+	'click .sort-btn': function(e){
+		var button = $(e.currentTarget);
+		if (button.hasClass('date-sort-btn')){
+			Session.set('sortBy', 'date');
+		} else {
+			Session.set('sortBy', 'score');
+		}
+
+		Session.set('limit', 15);
 	}
 })
