@@ -1,4 +1,5 @@
 Template.awardPage.rendered = function(){
+	console.log('awardPage rendered');
 	modalZoomIn();
 }
 

@@ -1,0 +1,14 @@
+<template name="modal">
+	<div class="modal {{classes}}">
+		<div class="modal-content">
+			<div class="modal-header">
+				<p>{{this.title}}</p>
+				<button class="close-modal-btn close-btn">&#10006;</button>
+			</div>
+
+			<div class="modal-body">
+				{{> Template.contentBlock}}
+			</div>
+		</div>
+	</div>
+</template>

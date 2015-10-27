@@ -1,13 +1,15 @@
 <template name="awardsLanding">
-	<div class="page">
-		{{#each awardTypes}}
-			<div class="award-type {{name}}">
-				<a class="award-link" href="{{name}}">
-					<div class="wrapper">
-						<h1 class="award-title">{{name}}</h1>
-					</div>
-				</a>
-			</div>
-		{{/each}}
-	</div>
+	{{#page}}
+		{{#list classes="award-type-list" animateItems=true delay=50}}
+			{{#each awardTypes}}
+				{{#item classes=awardClasses}}
+					<a class="award-link transition-link" href="/the/{{name}}">
+						<div class="wrapper">
+							<h1 class="award-title">{{name}}</h1>
+						</div>
+					</a>
+				{{/item}}
+			{{/each}}
+		{{/list}}
+	{{/page}}
 </template>

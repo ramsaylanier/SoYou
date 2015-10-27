@@ -1,0 +1,20 @@
+.donut-toggle{
+	position: fixed;
+
+	&.right-toggle{
+		right: 20px;
+	}
+
+	&.left-toggle{
+		left: 20px;
+	}
+
+	&.top{
+		top: 20px;
+	}
+
+	&.bottom{
+		bottom: 20px;
+	}
+
+}

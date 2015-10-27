@@ -7,10 +7,6 @@
 }
 
 .menu-toggle{
-	position: fixed;
-	right: 20px;
-	top: 20px;
-
 	.bar{
 		position: relative;
 		width: 25px;
@@ -46,12 +42,6 @@
 }
 
 .account{
-	position: fixed;
-	width: 200px;
-	height: 100%;
-	right: -300px;
-	background-color: lighten(black, 20%);
-
 	a{
 		width: 100%;
 		display: block;

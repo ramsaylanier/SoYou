@@ -1,6 +1,5 @@
 <template name="awardSingle">
-	<div class="award-item {{type}}">
-
+	{{#item classes=awardItemClasses}}
 		<div class="award-score {{upvoted}} award-meta">
 			<div class="inner">
 				<p>{{score}}</p>
@@ -20,5 +19,5 @@
 				<p>{{createdOnYear}}</p>
 			</div>
 		</div>
-	</div>
+	{{/item}}
 </template>

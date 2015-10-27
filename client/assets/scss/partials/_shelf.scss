@@ -1,0 +1,14 @@
+.shelf{
+	position: fixed;
+	width: 200px;
+	height: 100%;
+	background-color: lighten(black, 20%);
+}
+
+.right-shelf{
+	right: -200px;
+}
+
+.left-shelf{
+	left: -200px;
+}

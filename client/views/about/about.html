@@ -1,8 +1,6 @@
 <template name="about">
-	<div class="modal about-modal">
-		<div class="modal-content wide t-a-center">
-			<p>This thing was made by <a href="http://ramsaylanier.com" class="worst strong">Ramsay Lanier</a> using <a href="http://meteor.com" class="best strong">MeteorJS</a>.</p>
-			<p>You can find him on <a href="http://twitter.com/verybadhello" class="funniest strong">Twitter</a>, <a href="https://github.com/ramsaylanier" class="coolest strong">GitHub</a>, or <a href="http://andpizza.com/" class="weirdest strong">&pizza</a>.</p>
-		</div>
-	</div>
+	{{#modal classes="about-modal t-a-center"}}
+		<p>This thing was made by <a href="http://ramsaylanier.com" class="worst strong">Ramsay Lanier</a> using <a href="http://meteor.com" class="best strong">MeteorJS</a>.</p>
+		<p>You can find him on <a href="http://twitter.com/verybadhello" class="funniest strong">Twitter</a>, <a href="https://github.com/ramsaylanier" class="coolest strong">GitHub</a>, or <a href="http://andpizza.com/" class="weirdest strong">&pizza</a>.</p>
+	{{/modal}}
 </template>

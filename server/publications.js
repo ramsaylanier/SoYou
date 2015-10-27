@@ -1,4 +1,5 @@
 Meteor.publish('awardsList', function(awardType, options){
+	// Meteor._sleepForMs(2000);
 	return Awards.find({type: awardType}, options);
 })
 

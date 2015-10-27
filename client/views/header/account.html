@@ -1,5 +1,26 @@
 <template name="account">
-	<div class="account">
+	{{#shelf classes="account" side="left"}}
+		<nav class="account-nav pull-right">
+			{{#if currentUser}}
+				<a href="#" class="logout-link">Logout</a>
+			{{else}}
+				<button class="twitter-login-btn">Login With Twitter</button>
+			{{/if}}
+		</nav>
+
+		<nav class="award-nav">
+			<a class="nav-link worst-link" href="/the/worst">Worst</a>
+			<a class="nav-link best-link" href="/the/best">Best</a>
+			<a class="nav-link funniest-link" href="/the/funniest">Funniest</a>
+			<a class="nav-link coolest-link" href="/the/coolest">Coolest</a>
+			<a class="nav-link weirdest-link" href="/the/weirdest">Weirdest</a>
+		</nav>
+
+
+		<a class="nav-link about-link" href="/the/person-who-wants-to-know-about-this-amaizing-app">About</a>
+	{{/shelf}}
+
+	{{#shelf classes="account" side="right"}}
 		<nav class="account-nav pull-right">
 			{{#if currentUser}}
 				<a href="#" class="logout-link">Logout</a>
@@ -16,6 +37,7 @@
 			<a class="nav-link weirdest-link" href="/the/weirdest">Weirdest</a>
 		</nav>
 
+
 		<a class="nav-link about-link" href="/the/person-who-wants-to-know-about-this-amaizing-app">About</a>
-	</div>
+	{{/shelf}}
 </template>

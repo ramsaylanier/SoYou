@@ -1,4 +1,7 @@
 Template.awardSingle.helpers({
+	awardItemClasses: function(){
+		return "award-item " + this.type;
+	},
 	createdOnDate: function(){
 		return moment(this.date).format('MMM D');
 	},

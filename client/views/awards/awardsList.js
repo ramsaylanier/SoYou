@@ -6,7 +6,7 @@ Template.awardsList.created = function(){
   instance.sortBy = new ReactiveVar('date');
 
   Session.set('awardLimit', 15);
-  Session.set('sortBy', 'date');
+  Session.set('sortBy', 'score');
 
   instance.autorun(function () {
   	var sortBy = Session.get('sortBy');
@@ -41,20 +41,8 @@ Template.awardsList.created = function(){
 }
 
 Template.awardsList.rendered = function(){
-	Session.set('itemCount', 0);
-	this.find('.awards-wrapper')._uihooks = {
-	    insertElement: function(node, next){
-	    	var itemCount = Session.get('itemCount');
-	    	itemCount ++;
-	    	Session.set('itemCount', itemCount);
-	    	$(node).insertBefore(next);
-	    	
-	    	Meteor.setTimeout(function(){
-	    		awardItemIn($(node));
-	    	}, 50 * itemCount)
-	    }
-	}
 
+	//infinite scrolling
 	$(window).on('scroll', function(){
 		var threshold, target = $(".show-more-awards");
 		if (!target.length) return;
@@ -63,7 +51,6 @@ Template.awardsList.rendered = function(){
 
 		if (target.offset().top < threshold) {
 		    if (!target.data("visible")) {
-		        console.log("target became visible (inside viewable area)");
 		        target.data("visible", true);
 
 		        Session.set('itemCount', 0);
@@ -73,7 +60,6 @@ Template.awardsList.rendered = function(){
 		    }
 		} else {
 		    if (target.data("visible")) {
-		        // console.log("target became invisible (below viewable arae)");
 		        target.data("visible", false);
 		    }
 		}     
@@ -81,15 +67,18 @@ Template.awardsList.rendered = function(){
 }
 
 Template.awardsList.helpers({
+	pageClasses: function(){
+		return getAwardType() + '-page';
+	},
 	isReady: function() {
 		var isReady = Template.instance().ready.get();
 		if (isReady){
-			awardListIn();
+			// awardItemsIn();
 			return true
 		}
 	},
 	awards: function(){
-		return Template.instance().awards(); 
+		return Template.instance().parentTemplate().awards();
 	},
 	hasMore: function(){
 		return Template.instance().awards().count() >= Session.get('awardLimit')
@@ -108,20 +97,6 @@ Template.awardsList.helpers({
 Template.awardsList.events({
 	'click .cta-btn': function(){
 		Blaze.render(Template.createAward, $('.application').get(0));
-		closeMenuState();
-		switchModalState();
-
-	},
-	'click .load-more-btn': function (event, instance) {
-		event.preventDefault();
-
-		//reset itemCount
-		Session.set('itemCount', 0);
-
-	    var limit = Session.get('awardLimit')
-
-	    limit += 15;
-	    Session.set('awardLimit', limit);
 	},
 	'click .sort-btn': function(e){
 		var button = $(e.currentTarget);
@@ -131,6 +106,6 @@ Template.awardsList.events({
 			Session.set('sortBy', 'score');
 		}
 
-		Session.set('limit', 15);
+		Session.set('awardLimit', 15);
 	}
 })

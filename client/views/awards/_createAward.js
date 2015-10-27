@@ -10,6 +10,12 @@ Template.createAward.rendered = function(){
 }
 
 Template.createAward.helpers({
+	modalClass: function(){
+		return getAwardType() + '-modal';
+	},
+	modalTitle: function(){
+		return "Who is the " + getAwardType() + "?";
+	},
 	awardGif: function(){
 		return Session.get('awardGif');
 	}

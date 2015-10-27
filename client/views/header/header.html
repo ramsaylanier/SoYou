@@ -1,16 +1,17 @@
 <template name="header">
 	<header class="header">
 		<nav class="main-nav nav">
-			{{!-- {{#if currentUser}}
-				<a href="#" class="header-link account-link">{{currentUser.username}} <span class="arrow">&#9652;</span></a>
-			{{else}}
-				<a href="#" class="header-link account-link">Login <span class="arrow">&#9652;</span></a>
-			{{/if}} --}}
-			<div class="menu-toggle">
+			{{#toggle classes="menu-toggle top" side="left" state='toggleShelfState' target='.left-shelf'}}
 				<div class="bar bar-1"></div>
 				<div class="bar bar-2"></div>
 				<div class="bar bar-3"></div>
-			</div>
+			{{/toggle}}
+
+			{{#toggle classes="menu-toggle top" side="right" state='toggleShelfState' target='.right-shelf'}}
+				<div class="bar bar-1"></div>
+				<div class="bar bar-2"></div>
+				<div class="bar bar-3"></div>
+			{{/toggle}}
 		</nav>
 	</header>
 

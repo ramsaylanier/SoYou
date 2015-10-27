@@ -1,10 +1,13 @@
 Template.awardsLanding.rendered = function(){
 	var awards = $('.award-type');
-	landingPageLoad();
+	// landingPageLoad();
 }
 
 
 Template.awardsLanding.helpers({
+	'awardClasses': function(){
+		return 'award-type ' + this.name;
+	},
 	'awardTypes': function(){
 		var awardTypes = Meteor.awardTypes();
 		return awardTypes;
@@ -12,16 +15,6 @@ Template.awardsLanding.helpers({
 })
 
 Template.awardsLanding.events({
-	'click .award-link': function(e){
-		e.preventDefault();
-
-		if (Session.get('menuState') == 'active')
-			switchMenuState();
-
-		var url = $(e.currentTarget).attr('href');
-
-		landingPageOut(url);
-	},
 	'mouseenter .award-link': function(e){
 		$(e.currentTarget).velocity("stop");
 		$(e.currentTarget).velocity({

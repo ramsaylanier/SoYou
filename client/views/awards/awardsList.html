@@ -1,40 +1,39 @@
 <template name="awardsList">
-	<div class="page {{awardType}}-page">
-		<div class="award-type {{awardType}}">
-			<div class="award-link">
-				<div class="wrapper">
-					<h1 class="award-title">{{awardType}}</h1>
-				</div>
-			</div>
-		</div>
-		<div class="awards-list {{awardType}}-list">
-			<div class="wrapper">
-				<div class="awards-wrapper">
-					{{#if currentUser}}
-						<button class="cta-btn {{awardType}}-btn">Tell someone they're the {{awardType}}</button>
-					{{else}}
-						<button class="twitter-login-btn small-btn">Login With Twitter</button>
-					{{/if}}
-
-					<div class="sort-options t-a-center">
-						<button class="date-sort-btn sort-btn {{checkSort}}">Most recent</button>
-						<button class="score-sort-btn sort-btn {{checkSort}}">The {{awardType}}</button>
+		{{#page classees=pageClasses animateItems=true itemDelay=50 waitForReady=true}}
+			<div class="award-type {{awardType}}">
+				<div class="award-link">
+					<div class="wrapper">
+						<h1 class="award-title">{{awardType}}</h1>
 					</div>
-					{{#each awards}}
-						{{> awardSingle}}
-					{{/each}}
 				</div>
 			</div>
-		</div>
-	</div>
+			<div class="awards-list {{awardType}}-list">
+				<div class="wrapper">
+					<div class="awards-wrapper transition-wrapper">
+						{{#if currentUser}}
+							<button class="cta-btn {{awardType}}-btn">Tell someone they're the {{awardType}}</button>
+						{{else}}
+							<button class="twitter-login-btn small-btn">Login With Twitter</button>
+						{{/if}}
+
+						<div class="sort-options t-a-center">
+							<button class="date-sort-btn sort-btn {{checkSort}}">Most recent</button>
+							<button class="score-sort-btn sort-btn {{checkSort}}">The {{awardType}}</button>
+						</div>
+							{{#each awards}}
+								{{> awardSingle}}
+							{{/each}}
+
+					</div>
+				</div>
+			</div>
+		{{/page}}
 
 	{{#if isReady}}
 	    {{#if hasMore}}
-	    	<div class="show-more-awards">
-			    {{!-- <button class="load-more-btn primary-btn {{awardType}}-btn">Load More</button> --}}
-		    </div>
+	    	<div class="show-more-awards"></div>
 	    {{/if}}
 	{{else}}
-		{{> loading}}
+		{{>loading}}
 	{{/if}}
 </template>
